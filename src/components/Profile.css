@@ -1,0 +1,16 @@
+.profile{
+    grid-area: p;
+    background-color: azure;
+}
+
+.profile-img img{
+    width: 1140px;
+    height: 150px;
+}
+
+.info-profile{
+    display: flex;
+}
+.info-profile img{
+    width: 100px;
+}
