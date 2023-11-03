@@ -1,17 +1,24 @@
 #root {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
-.wrapper{
-  display: grid;
+.wrapper {
+    display: grid;
 
-  grid-template-areas:
+    grid-template-areas:
   "h h"
-  "s p";
-  grid-template-rows: 80px 1fr;
-  grid-template-columns: 2fr 10fr;
+  "s c";
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 2fr 10fr;
 }
 
+.wrapper-content {
+    .content {
+        grid-area: c;
+        background-color: azure;
+    }
+
+}
 
 
 

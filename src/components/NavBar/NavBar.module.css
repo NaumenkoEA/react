@@ -1,9 +1,9 @@
-.sidebar{
+.navbar {
     grid-area: s;
     background-color: darkseagreen;
 }
 
-.item{
+.item {
     text-align: left;
-    color: aliceblue;
+    color: midnightblue;
 }
