@@ -1,9 +1,15 @@
-.navbar {
+.nav {
     grid-area: s;
     background-color: darkseagreen;
+    padding: 10px 0 0 20px;
 }
 
 .item {
-    text-align: left;
-    color: midnightblue;
+    color: white;
+    text-decoration: none;
+}
+
+.active{
+    color: gold;
+    text-decoration: none;
 }
