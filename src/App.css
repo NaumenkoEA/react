@@ -9,7 +9,7 @@
   "h h"
   "s c";
     grid-template-rows: 80px 1fr;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 200px 1fr;
 }
 
 .wrapper-content {

@@ -3,7 +3,10 @@ import React from "react";
 
 const Message =(props) =>{
     return (
-        <div className={s.message}>{props.text}</div>
+        <div className={s.messagesInfo}>
+            <div className={s.message}>{props.text}</div>
+        </div>
+        
     );
 }
 export default Message

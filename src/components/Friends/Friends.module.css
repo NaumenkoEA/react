@@ -1,0 +1,17 @@
+.friendsBar{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.friendsBar img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

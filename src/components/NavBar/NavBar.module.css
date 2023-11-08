@@ -1,7 +1,14 @@
 .nav {
     grid-area: s;
     background-color: darkseagreen;
-    padding: 10px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 5px 10px;
+}
+
+.nav h3{
+    margin: 0 0 10px 0;
+
 }
 
 .item {
@@ -13,3 +20,8 @@
     color: gold;
     text-decoration: none;
 }
+
+.friendsBar{
+    margin-top: 30px;
+}
+

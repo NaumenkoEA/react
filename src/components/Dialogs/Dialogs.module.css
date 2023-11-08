@@ -1,23 +1,37 @@
 .dialogs {
     display: grid;
     grid-template-columns: 3fr 10fr;
-
 }
 
-.dialogs_item {
+.dialogsItem {
     padding: 10px;
+
 }
 .active{
     color: gold;
 }
 .dialog {
     padding: 10px;
+    display: flex;
+    align-items: center;
+
 }
 
 .messages {
     padding: 10px;
 }
 
+.dialog img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right:  10px;
+}
+
 .message {
     padding: 10px;
+}
+
+.messagesInfo {
+
 }
