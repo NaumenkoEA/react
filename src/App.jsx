@@ -8,24 +8,22 @@ import Music from "./components/Music/Music.jsx";
 import Settings from "./components/Settings/Settings.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-function App() {
-    return (
-        <BrowserRouter>
-            <div className='wrapper'>
-                <Header></Header>
-                <NavBar></NavBar>
-                <div className='wrapper-content'>
-                    <Routes>
-                        <Route path='/profile' element={<Profile/>}/>
-                        <Route path='/dialogs' element={<Dialogs/>}/>
-                        <Route path='/news' element={<News/>}/>
-                        <Route path='/music' element={<Music/>}/>
-                        <Route path='/settings' element={<Settings/>}/>
-                    </Routes>
-                </div>
+function App(props) {
+    return (<BrowserRouter>
+        <div className='wrapper'>
+            <Header></Header>
+            <NavBar></NavBar>
+            <div className='wrapper-content'>
+                <Routes>
+                    <Route path='/profile' element={<Profile posts={props.appState.posts} />}/>
+                    <Route path='/dialogs' element={<Dialogs dialogs={props.appState.dialogs} messages={props.appState.messages}/>}/>
+                    <Route path='/news' element={<News/>}/>
+                    <Route path='/music' element={<Music/>}/>
+                    <Route path='/settings' element={<Settings/>}/>
+                </Routes>
             </div>
-        </BrowserRouter>
-    )
+        </div>
+    </BrowserRouter>)
 }
 
 export default App

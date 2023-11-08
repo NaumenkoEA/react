@@ -3,18 +3,19 @@ import React from "react";
 import Dialog from "./Dialog/Dialog.jsx";
 import Message from "./Message/Message.jsx";
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
+    let dialogElements = props.dialogs.map(d => <Dialog id={d.id} name={d.name}/>)
+
+    let messageElements = props.messages.map(m => <Message id={m.id} text={m.text}/>)
+
+
     return (<div className={s.dialogs}>
         <div className={s.dialogs_item}>
-            <Dialog name='Alina' id='1'/>
-            <Dialog name='Yana' id='2'/>
-            <Dialog name='Dasha' id='3'/>
+            {dialogElements}
         </div>
         <div className={s.messages}>
-            <Message text='Dasha love Fedora'/>
-            <Message text='I Love Alina❤️'/>
-            <Message text='Yana not Love Vadim'/>
-
+            {messageElements}
         </div>
     </div>)
 }
