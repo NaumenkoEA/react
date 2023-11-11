@@ -9,6 +9,7 @@ import Settings from "./components/Settings/Settings.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Friends from "./components/Friends/Friend.jsx";
 
+
 function App(props) {
     return (<BrowserRouter>
         <div className='wrapper'>
@@ -16,7 +17,11 @@ function App(props) {
             <NavBar></NavBar>
             <div className='wrapper-content'>
                 <Routes>
-                    <Route path='/profile' element={<Profile state={props.state.profilePage}/>}/>
+                    <Route path='/profile' element={<Profile
+                        profilePage={props.state.profilePage}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}
+                    />}/>
                     <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage}/>}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
