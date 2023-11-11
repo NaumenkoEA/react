@@ -11,7 +11,8 @@ let store = {
 
             messages: [{id: 1, text: 'I Love Alina'}, {id: 2, text: 'Yana not love Vadim'}, {
                 id: 3, text: 'Dasha love Fedora'
-            }]
+            }],
+            newMessage :' hello'
         }, sidebar: {}
     },
     getState() {
@@ -21,24 +22,34 @@ let store = {
     _callSubscriber() {
         console.log('state changed')
     },
-
-    addPost() {
-        let newPost = {
-            id: 3, text: this._state.profilePage.newPostText, likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = ' '
-        this._callSubscriber(this._state)
-    },
-
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer
+    },
+
+    dispatch (action) {
+        if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: 3, text: this._state.profilePage.newPostText, likesCount: 0
+            };
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ' '
+            this._callSubscriber(this._state)
+        }else if( action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostText = action.newText
+            this._callSubscriber(this._state)
+        }else if (action.type === 'ADD-MESSAGE'){
+            let newMess = {
+                id: 4, text: this._state.dialogsPage.newMessage
+            };
+            this._state.dialogsPage.messages.push(newMess)
+            this._state.dialogsPage.newMessage = ' '
+            this._callSubscriber(this._state)
+        }else if (action.type ==='UNMT'){
+            this._state.dialogsPage.newMessage =action.newText
+            this._callSubscriber(this._state)
+        }
     }
+
 }
 
 export default store;

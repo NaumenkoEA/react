@@ -1,34 +1,23 @@
 import s from './Dialogs.module.css'
 import React from "react";
-import Dialog from "./Dialog/Dialog.jsx";
-import Message from "./Message/Message.jsx";
+import MyMessages from "./Messages/MyMessages.jsx";
+import MyDialogs from "./MyDialogs/MyDialogs.jsx";
 
 const Dialogs = (props) => {
 
-    let dialogElements = props.state.dialogs.map(d => <Dialog id={d.id} name={d.name}/>)
 
-    let messageElements = props.state.messages.map(m => <Message id={m.id} text={m.text}/>)
+    return (
+        <div className={s.dialogs}>
+            <MyDialogs
+                dialogs={props.dialogsPage.dialogs}
+                dispatch={props.dispatch}
+            />
 
-    let createMes = React.createRef()
-
-    let addMes = () =>{
-        let text = createMes.current.value
-        alert(text)
-    }
-
-    return (<div className={s.dialogs}>
-        <div className={s.dialogsItem}>
-            {dialogElements}
-        </div>
-        <div className={s.messages}>
-            {messageElements}
-            <div>
-                <textarea ref={createMes}></textarea>
-            </div>
-            <div>
-                <button onClick={addMes}> Add Message</button>
-            </div>
-        </div>
-    </div>)
+            <MyMessages
+                messages={props.dialogsPage.messages}
+                newMessage={props.dialogsPage.newMessage}
+                dispatch={props.dispatch}
+            />
+        </div>)
 }
 export default Dialogs;

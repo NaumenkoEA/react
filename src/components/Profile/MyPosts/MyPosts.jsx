@@ -8,30 +8,30 @@ const MyPosts = (props) => {
 
     let newPost = React.createRef();
 
-    let addPost =() =>{
-        props.addPost()
+    let addPost = () => {
+        props.dispatch({type: 'ADD-POST'})
 
     }
 
-    let onPostChange =()=>{
-        let text =newPost.current.value
-        props.updateNewPostText(text)
+    let onPostChange = () => {
+        let text = newPost.current.value
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text})
     }
 
-    return (<div className={s.postsBlock}>
-        <h3>My Post</h3>
-        <div>
-            <textarea onChange={onPostChange} ref={newPost} value={props.newPostText}></textarea>
+    return (
+        <div className={s.postsBlock}>
+            <h3>My Post</h3>
+            <div>
+                <textarea onChange={onPostChange} ref={newPost} value={props.newPostText}></textarea>
+            </div>
+            <div>
+                <button onClick={addPost}>Add post</button>
+            </div>
+            <div className={s.posts}>
+                {postElements}
 
-        </div>
-        <div>
-            <button onClick={addPost}>Add post</button>
-        </div>
-        <div className={s.posts}>
-            {postElements}
-
-        </div>
-    </div>)
+            </div>
+        </div>)
 }
 
 export default MyPosts;
